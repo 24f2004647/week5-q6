@@ -3,6 +3,7 @@ import hashlib
 import os
 
 from mcp.server.fastmcp import FastMCP
+from mcp.server.transport_security import TransportSecuritySettings
 
 # ---------------------------------------------------------------------------
 # Config
@@ -41,7 +42,15 @@ class HeaderCaptureMiddleware:
 # ---------------------------------------------------------------------------
 # MCP server
 # ---------------------------------------------------------------------------
-mcp = FastMCP("exam-solver", stateless_http=True, json_response=True)
+mcp = FastMCP(
+    "exam-solver",
+    stateless_http=True,
+    json_response=True,
+    host="0.0.0.0",
+    transport_security=TransportSecuritySettings(
+        enable_dns_rebinding_protection=False
+    ),
+)
 
 
 @mcp.tool()
