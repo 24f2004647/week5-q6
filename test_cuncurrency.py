@@ -5,7 +5,7 @@ import secrets
 
 import httpx
 
-BASE_URL = "http://localhost:8000/mcp"
+BASE_URL = "http://localhost:8000/"
 REGISTERED_EMAIL = "24f2004647@ds.study.iitm.ac.in".strip().lower()
 HEADERS_BASE = {
     "Content-Type": "application/json",
@@ -42,6 +42,9 @@ async def main():
         for r in results:
             print(r)
         print("\nALL CONCURRENT CALLS ISOLATED CORRECTLY:", ok)
+
+
+asyncio.run(main())
 
 
 asyncio.run(main())
