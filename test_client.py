@@ -5,7 +5,7 @@ import time
 
 import httpx
 
-BASE_URL = "http://localhost:8000/mcp"
+BASE_URL = "http://localhost:8000/"
 REGISTERED_EMAIL = "24f2004647@ds.study.iitm.ac.in".strip().lower()
 
 COMMON_HEADERS = {
@@ -95,6 +95,9 @@ def main():
 
         print("\nALL CALLS CORRECT:", bool(all_ok))
 
+
+if __name__ == "__main__":
+    main()
 
 if __name__ == "__main__":
     main()
